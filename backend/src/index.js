@@ -17,6 +17,7 @@ const server=createServer(app)//this is the http server
 const io=connectToSocket(server)//this is to establish webSockets
 
 app.use(cors({
+    origin:"http://localhost:5173",
     credentials:true
 }))//to allow cross origin communication
 app.use(express.json({limit:"40kb"})) //to limit the payload prevent malpractice
