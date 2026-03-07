@@ -1,4 +1,4 @@
-import logo from "../../assets/Talkylogo.jpg";
+import logo from "../../assets/TalkyLogo.jpg";
 import { NavLink } from "react-router-dom";
 import toast from 'react-hot-toast';
 import server from "../../enviroment";
