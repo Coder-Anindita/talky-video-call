@@ -34,6 +34,9 @@ app.use("/api/v1/auth",authRoutes)
 app.get("/api/v1/checkAuth",checkAuth)
 app.post("/api/v1/savehistory",authMiddleWare,saveMeetingHistory)
 app.get("/api/v1/history",authMiddleWare,getMeetingHistory)
+app.get("/", (req,res)=>{
+  res.send("Backend running")
+})
 connectToDB()
 .then(()=>{
     server.listen(PORT,()=>{
