@@ -1,0 +1,169 @@
+.control-btn{
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition:0.3s ease, transform 0.2s ease;
+    
+}
+
+.control-btn:hover{
+    
+    transform: scale(1.3);
+    
+    cursor: pointer;
+}
+
+.userVideo{
+    position:fixed;
+    bottom:65px;
+    left:5px;
+    width:250px;
+}
+.call-end{
+    color: red;
+    font-size: 28px;
+    
+}
+.conferenceView{
+    display:flex;
+    gap:10px
+}
+.conferenceView>video{
+    width:60vw;
+    
+    min-width: 30vw;
+
+}
+.chat-room{
+    position:absolute;
+    right:20px;
+    top:10px;
+    height:85vh;
+    width:30vw;
+    border-radius:10px;
+    background-color:white;
+    border:1px solid #ddd;
+    overflow-y:auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+.chat-container{
+    flex:1;                 
+    overflow-y:auto;
+    padding:10px;
+
+}
+
+@media (max-width:768px){
+
+    .chat-room{
+        width:70vw;      /* full width */
+        height:70vh;      /* smaller height */
+        top: 50%;
+        left: 50%;
+        right: auto;
+         
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        overflow-y:auto;
+        border-radius:10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+}
+.chat-text-area{
+    padding-bottom:10px;
+    
+    
+}
+.chat{
+    width: 20rem;
+    background-color: #cbf9cc;
+    border-radius: 5px;
+    text-align: left;
+    padding-left: 10px;
+    
+}
+.sender{
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:3px;
+}
+
+.text{
+    font-size:15px;
+}
+
+.time{
+    font-size:10px;
+    text-align:right;
+    opacity:0.7;
+    padding-right: 5px;
+}
+.chatBox{
+    text-align: center;
+    color: #28c52e;
+    
+}
+.noMessage{
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+}
+
+.lobby-container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+}
+
+.lobby-card{
+    background:white;
+    padding:30px;
+    
+    box-shadow:0px 0px 15px #28c52e;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    width:400px;
+}
+
+.lobby-title{
+    font-size:24px;
+    font-weight:600;
+}
+
+.preview-video{
+    width:300px;
+    height:200px;
+    background:black;
+    
+    object-fit:cover;
+}
+
+.username-input{
+    width:100%;
+    padding:10px;
+    
+    border-radius:6px;
+    border:1px solid #ccc;
+    outline:none;
+}
+.lobby-btn{
+    background: transparent;
+    border: none;
+    color: #28c52e;
+    font-size: 30px;
+    cursor: pointer;
+    padding-left: 20px;
+    transition:0.3s ease, transform 0.2s ease;
+    
+}
+
+

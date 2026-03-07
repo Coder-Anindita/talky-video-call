@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
 
 function Login() {
     const [validated, setValidated] = useState(false);
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
+    const navigate = useNavigate();
   const handleSubmit = async(event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -30,12 +33,19 @@ function Login() {
         })
         const result=await response.json();
         if(response.ok){
+
             console.log("Logged in")
             setEmail("")
             setPassword("")
+            toast.success("User logged in sucessfully!",{duration: 4000})
+            navigate("/home")
+            
+
+            
         }
         else{
             console.log("Error")
+            toast.error("OOPS! Try again",{duration:4000})
         }
     }
     catch(e){
@@ -52,7 +62,7 @@ function Login() {
       onSubmit={handleSubmit}
     >
       <h4 className="mb-3 text-center fs-2" style={{color:"#28c52e"}}>Login</h4>
-
+      
       <div className="mb-3">
         <input
           type="email"

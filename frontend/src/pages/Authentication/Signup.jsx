@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import toast from 'react-hot-toast';
 function Signup() {
   const [validated, setValidated] = useState(false);
   const [passwordMatch, setPasswordMatch] = useState(true);
@@ -40,14 +40,16 @@ function Signup() {
       if (!response.ok) {
     
         setServerError(result.message || "Something went wrong");
+        toast.error("OOPS! Try again",{duration:4000})
         return;
       }
-
+      toast.success("Signed in sucessfully!",{duration:4000})
       console.log("Signed up successfully");
       setServerError("");
       setEmail("");
       setPassword("");
       setUsername("");
+      
       
 
       
@@ -55,6 +57,7 @@ function Signup() {
     }
     catch(e){
       setServerError("Server error. Please try again later.");
+      toast.error("OOPS! Try again",{duration:5000})
 
     }
     
@@ -69,13 +72,14 @@ function Signup() {
       }`}
       onSubmit={handleSubmit}
     >
+      
       <h4
         className="mb-3 text-center fs-2"
         style={{ color: "#28c52e" }}
       >
         Signup
       </h4>
-
+    
       {/* Name */}
       <div className="mb-3">
         <input
