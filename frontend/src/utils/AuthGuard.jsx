@@ -1,6 +1,6 @@
 import {useEffect,useState} from "react"
 import {Navigate} from "react-router-dom"
-
+import server from "../enviroment";
 import { useNavigate } from "react-router-dom";
 const AuthGuard=({child})=>{
     const [loading,setLoading]=useState(true);
@@ -12,7 +12,7 @@ const AuthGuard=({child})=>{
 
         const checkAuth = async () => {
             try{
-                const res = await fetch("http://localhost:3000/api/v1/checkAuth",{
+                const res = await fetch(`${server.replace(/\/$/, '')}/api/v1/checkAuth`,{
                     method:"GET",
                     credentials:"include"
                 })
