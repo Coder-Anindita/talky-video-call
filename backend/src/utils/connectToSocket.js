@@ -47,11 +47,12 @@ const connectToSocket=(server)=>{
         });
 
         socket.on("send-message",(data)=>{//Listens for when a user sends a chat message
-            const {path,message}=data//Pulls out the room name and message text from the data.
+            const {path,message,username}=data//Pulls out the room name and message text from the data.
             if(!messages[path]){
                 messages[path]=[]//If there's no message history for this room yet, create an empty array to store them
             }
             const msgData={
+                username:username,
                 sender:socket.id,
                 text:message,
                 time:Date.now()
