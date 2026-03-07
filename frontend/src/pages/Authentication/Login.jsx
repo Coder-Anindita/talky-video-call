@@ -21,7 +21,7 @@ function Login() {
     setValidated(true);
     const data={password:password,email:email}
     try{
-        const response=await fetch(`${server}api/v1/auth/login`,{
+        const response=await fetch(`${server}/api/v1/auth/login`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",
@@ -69,7 +69,7 @@ function Login() {
           className="form-control"
           placeholder="Email"
           value={email}
-          name={email}
+          name="email"
           onChange={(e)=>{setEmail(e.target.value)}}
           required
         />
