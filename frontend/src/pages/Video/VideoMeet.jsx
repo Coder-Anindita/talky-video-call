@@ -2,7 +2,7 @@ import io from "socket.io-client";// connects your browser to the socket server
 import React, { useEffect } from 'react'
 import { useRef,useState } from 'react';
 import { MdCallEnd } from "react-icons/md";
-import logo from "../../assets/Talkylogo.jpg";
+
 import { FaVideo, FaVideoSlash, FaMicrophone, FaMicrophoneSlash, FaDesktop, FaComments } from "react-icons/fa";
 import { MdOutlineScreenShare } from "react-icons/md";
 import { MdOutlineStopScreenShare } from "react-icons/md";
