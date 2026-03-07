@@ -4,11 +4,12 @@ import HomeNavBar from '../Home/HomeNavBar'
 import toast from 'react-hot-toast'
 import "../History/History.css"
 import image from "../../assets/History.svg"
+import server from '../../enviroment'
 function History() {
     const [history,setHistory]=useState([])
     let getHistory=async()=>{
         try{
-            let response=await fetch("http://localhost:3000/api/v1/history",{
+            let response=await fetch(`${server}/api/v1/history`,{
                 method:"GET",
                 
                 credentials:"include",

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Navigate, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
-
+import server from "../../enviroment";
 function Login() {
     const [validated, setValidated] = useState(false);
     const [email,setEmail]=useState("");
@@ -21,7 +21,7 @@ function Login() {
     setValidated(true);
     const data={password:password,email:email}
     try{
-        const response=await fetch("http://localhost:3000/api/v1/auth/login",{
+        const response=await fetch(`${server}/api/v1/auth/login`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",

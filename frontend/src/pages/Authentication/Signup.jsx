@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import toast from 'react-hot-toast';
+import server from "../../enviroment";
 function Signup() {
   const [validated, setValidated] = useState(false);
   const [passwordMatch, setPasswordMatch] = useState(true);
@@ -27,7 +28,7 @@ function Signup() {
     const data={name:username,password:password,email:email}
 
     try{
-      const response=await fetch("http://localhost:3000/api/v1/auth/register",{
+      const response=await fetch(`${server}/api/v1/auth/register`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json",

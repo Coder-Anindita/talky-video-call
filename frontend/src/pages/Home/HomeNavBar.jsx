@@ -1,10 +1,11 @@
 import logo from "../../assets/Talkylogo.jpg";
 import { NavLink } from "react-router-dom";
 import toast from 'react-hot-toast';
+import server from "../../enviroment";
 const HomeNavBar = () => {
     let handleOnLogout=async()=>{
             try{
-            const response=await fetch("http://localhost:3000/api/v1/auth/logout",{
+            const response=await fetch(`${server}/api/v1/auth/logout`,{
                 method:"POST",
                 headers:{
                 "Content-Type":"application/json",

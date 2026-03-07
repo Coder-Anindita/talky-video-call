@@ -11,7 +11,7 @@ import TextField from "@mui/material/TextField";
 import "../Video/VideoMeet.css"
 import { useNavigate } from "react-router-dom";
 const server_url="http://localhost:3000";  //websockets server
-
+import server from "../../enviroment";
 
 let connections={}//persist even if the component re-renders as it is declared outside.
 //Stores all WebRTC peer connections. Declared outside the component so it survives re-renders. Example: connections["abc123"] = RTCPeerConnection
@@ -408,7 +408,7 @@ function VideoMeet() {
     // 3. Joins the call room
     // 4. Sets up chat listener
     // 5. Sets up user joined/left listeners
-        socketRef.current=io.connect(server_url,{secure:false})//opens a WebSocket connection
+        socketRef.current=io.connect(server,{secure:false})//opens a WebSocket connection
         socketRef.current.on("signal",gotMessageFromServer)
         socketRef.current.on("connect",()=>{//fires when the socket connection is established
             // Once connected to server:
@@ -518,10 +518,8 @@ function VideoMeet() {
         }
     },[screen])
 
-    const addHistory=async()=>{
-        await fetch
+    
 
-    }
 
     const connect=()=>{
         getMedia()

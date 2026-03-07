@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../LandingPage/Navbar'
 
 import SideImage from "../../assets/Mobile login-pana.svg"
-import Signup from './SignUp'
+import Signup from "../Authentication/Signup.js"
 function SignupPage() {
   return (
     <div className='container-fluid '>

@@ -5,6 +5,7 @@ import HomeNavBar from './HomeNavBar';
 import image from "../../assets/HomeImage.svg"
 import TextField from "@mui/material/TextField";
 import toast from "react-hot-toast"
+import server from '../../enviroment';
 function Home() {
     let navigate=useNavigate();
     const [meetingCode,setMeetingCode]=useState("")
@@ -16,7 +17,7 @@ function Home() {
     }
     let addToHistory=async()=>{
         try{
-            let response=await fetch("http://localhost:3000/api/v1/savehistory",{
+            let response=await fetch(`${server}/api/v1/savehistory`,{
                  
             method:"POST",
             headers:{
