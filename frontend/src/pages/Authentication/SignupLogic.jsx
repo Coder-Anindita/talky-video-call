@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import toast from 'react-hot-toast';
 import server from "../../enviroment";
-function Signup() {
+function SignupLogic() {
   const [validated, setValidated] = useState(false);
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [username,setUsername]=useState("");
@@ -166,4 +166,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default SignupLogic;
