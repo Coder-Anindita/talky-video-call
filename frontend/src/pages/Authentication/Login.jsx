@@ -21,7 +21,10 @@ function Login() {
     setValidated(true);
     const data={password:password,email:email}
     try{
+        const url = `${server.replace(/\/$/, '')}/api/v1/auth/login`;
+        console.log("Fetching:", url);
         const response=await fetch(`${server.replace(/\/$/, '')}/api/v1/auth/login`,{
+          
             method:"POST",
             headers:{
                 "Content-Type":"application/json",
