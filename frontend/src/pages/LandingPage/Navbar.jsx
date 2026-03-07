@@ -1,4 +1,4 @@
-import logo from "../../assets/Talkylogo.jpg";
+import logo from "../../assets/TalkyLogo.jpg";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
