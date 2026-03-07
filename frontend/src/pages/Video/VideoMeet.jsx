@@ -518,8 +518,9 @@ function VideoMeet() {
         }
     },[screen])
 
-    const addHistory=()=>{
-        
+    const addHistory=async()=>{
+        await fetch
+
     }
 
     const connect=()=>{
@@ -532,7 +533,7 @@ function VideoMeet() {
         if(message.length===0){
             return
         }
-        let messageData={message:message,path:window.location.href}
+        let messageData={message:message,path:window.location.href,username:username}
         socketRef.current.emit("send-message",messageData);
         console.log(messages);
         setMessage("");
@@ -548,7 +549,7 @@ function VideoMeet() {
         }catch(e){
 
         }
-        routeTo("/")
+        routeTo("/home")
         
 
     }
@@ -612,7 +613,7 @@ function VideoMeet() {
                             {messages.length>0 ? messages.map((item,index)=>{
                                 return(
                                     <div key={index} className="chat">
-                                        <p className="sender">{item.sender}</p>
+                                        <p className="sender">{item.username}</p>
                                         <p className="text">{item.text}</p>
                                         <p className="time">{new Date(item.time).toLocaleTimeString([], {
                                             hour: '2-digit',
@@ -663,7 +664,7 @@ function VideoMeet() {
                 {videos.map((video)=>(
                     <div key={video.socketId} className="col-md-3">
 
-                        <p>{video.socketId}</p>
+                        
 
                         <video
                             data-socket={video.socketId}

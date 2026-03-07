@@ -57,7 +57,7 @@ const HomeNavBar = () => {
           <div className=" " onClick={handleOnLogout} ><NavLink to="/" className={({isActive})=>`nav-link rounded ${
             isActive ? "active-nav-link" : ""
           }`} >Logout</NavLink></div>
-          <div className=" " ><NavLink to="/" className={({isActive})=>`nav-link rounded ${
+          <div className=" " ><NavLink to="/history" className={({isActive})=>`nav-link rounded ${
             isActive ? "active-nav-link" : ""
           }`} >History</NavLink></div>
           

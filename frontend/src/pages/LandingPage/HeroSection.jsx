@@ -1,6 +1,7 @@
 import hero from "../../assets/VideoCallLanding.svg"
-
+import { useNavigate } from "react-router-dom"
 function HeroSection() {
+    let navigate=useNavigate()
   return (
     <div className="container-fluid">
         <div className="row align-items-center px-5">
@@ -13,7 +14,7 @@ function HeroSection() {
                         Communication. Simplified. With Talky.
                     </p>
                     <div className="d-flex justify-content-center ">
-                        <p className="text-center px-4 py-2 rounded get-started" >Get started</p>
+                        <p className="text-center px-4 py-2 rounded get-started" onClick={()=>navigate("/login")} >Get started</p>
                     </div>
                 </div>
             </div>

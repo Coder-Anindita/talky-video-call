@@ -4,12 +4,46 @@ import { useNavigate } from 'react-router-dom'
 import HomeNavBar from './HomeNavBar';
 import image from "../../assets/HomeImage.svg"
 import TextField from "@mui/material/TextField";
-
+import toast from "react-hot-toast"
 function Home() {
     let navigate=useNavigate();
     const [meetingCode,setMeetingCode]=useState("")
+    
     let handleJoinVideoCall=async()=>{
+        await addToHistory()
         navigate(`/${meetingCode}`)
+        
+    }
+    let addToHistory=async()=>{
+        try{
+            let response=await fetch("http://localhost:3000/api/v1/savehistory",{
+                 
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            credentials:"include",
+            body: JSON.stringify({
+                code: meetingCode
+            })
+                
+            })
+            const result=await response.json();
+              
+            if (!response.ok) {
+                
+                    
+                
+                
+                return;
+            }
+            toast.success("Meeting stored in history!",{duration:4000})
+            console.log("meeting stored");
+        }
+        catch(e){
+            console.log(e)
+
+        }
     }
     
   return (
