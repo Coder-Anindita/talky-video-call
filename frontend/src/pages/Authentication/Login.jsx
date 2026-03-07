@@ -21,7 +21,7 @@ function Login() {
     setValidated(true);
     const data={password:password,email:email}
     try{
-        const response=await fetch(`https://talkybackend.onrender.com/api/v1/auth/login`,{
+        const response=await fetch(`${server}/api/v1/auth/login`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",
